@@ -9,5 +9,5 @@ FROM openjdk:17
 
 COPY build/libs/*T.jar app.jar
 # jar파일을 실행시킨다.
-ENTRYPOINT ["java", "jar", "Dspring.profiles.active=prod", "app.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=prod", "app.jar"]
 
