@@ -14,7 +14,9 @@ class LinuxBeApplicationTests {
 
 	@Test
 	void test1(){
+
 		Assertions.assertEquals(1+10, 11);
+
 	}
 
 }
