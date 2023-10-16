@@ -12,4 +12,9 @@ class LinuxBeApplicationTests {
 		Assertions.assertEquals(1+2, 3);
 	}
 
+	@Test
+	void test1(){
+		Assertions.assertEquals(1+10, 10);
+	}
+
 }
