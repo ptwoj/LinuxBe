@@ -32,5 +32,11 @@ jobs:
     - name: Build the Docker image
       run: docker build -t ${{env.secrets.DOCKER.USERNAME}}/${{env.secrets.DOCKER.REPOSITORY}} .
 
-
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{secrets.HOST_IP}}
+        username: ${{secrets.HOST_USERNAME}}
+        key: ${{secrets.HOST_KEY}}
+    
 
