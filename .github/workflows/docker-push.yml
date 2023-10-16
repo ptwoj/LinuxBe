@@ -1,7 +1,7 @@
 name: Gradle Package
 on:
   pull_request:
-    branches: [dev]
+    branches: ["master"]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,5 +12,11 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    - name: Test
-      run: ./gradlew test
+    - name: Permission
+      run: chmod 744 gradlew
+      
+    - name: build
+      run: ./gradlew clean build
+      
+    - name: Build the Docker image
+      run: docker build     
