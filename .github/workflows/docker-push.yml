@@ -12,6 +12,7 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+        
     - name: Permission
       run: chmod 744 gradlew
       
@@ -27,6 +28,9 @@ jobs:
         username: ${{secrets.DOCKER.USERNAME}}
         password: ${{secrets.DOCKER.PASSWORD}}
 
+        
+    - name: Build the Docker image
+      run: docker build -t ${{env.secrets.DOCKER.USERNAME}}/${{env.secrets.DOCKER.REPOSITORY}} .
 
 
 
